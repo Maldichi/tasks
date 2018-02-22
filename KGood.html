@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>
+        KGood
+    </title>
+    <script>
+//        var string;
+function getK(kGood) {
+
+
+    var arrK = 'abcdefghijklmnopqrstuvwxyz';
+    var l = kGood.length;
+    alert(l);
+
+    var count=0;
+
+    for (var i = 0; i < l; i++) {
+
+        if (kGood[i]===arrK[0]) {
+
+            var good = kGood.slice(count);
+
+
+            for (var j = 0; j < arrK.length; j++) {
+
+                if (good[j] === arrK[j]) {
+//                    alert(good[j]);
+                    count++;
+//                    alert(count);
+
+                }
+                else {
+                    var res=kGood.substr(0,count);
+                    document.write(res+'<br>');
+                    document.write(count);
+                    return;
+                }
+//                alert (count);
+            }
+//            alert(count);
+        }
+        else /*(kGood[i]!==arrK[0])*/ {
+            count++;
+//            alert(count);
+        }
+
+    }
+alert (count);
+}
+
+
+
+getK('dddddddddddddddddddddabcdefghijklmnop');
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>

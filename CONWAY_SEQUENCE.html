@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <title>
+        Conway Sequence
+    </title>
+    <script>
+        function conwSeq(str, n) {
+
+            var count = 0;
+            var newStr = '';
+            var ns = str.toString();
+
+            for (var j = 0; j < n; j++) {
+
+
+                for (var i = 0; i < ns.length; i++) {
+
+                    if (ns === '')
+                        break;
+//                    if (ns.length === 1) {
+//
+//                        newStr += ('1' + ns);
+//                    }
+                    else if (ns[i] !== ns[i + 1]) {
+                        newStr += ('1' + ns[i]);
+                    }
+
+                    else if (ns[i] === ns[i + 1]) {
+                        count = 1;
+                        while (ns[i] === ns[i + 1]) {
+                            count++;
+                            ns = ns.substr(1);
+                        }
+                        newStr += (count + ns[i]);
+                    }
+                    count = 0;
+                }
+                document.write(newStr + '<br>');
+
+                ns = newStr;
+                newStr = '';
+            }
+        }
+        conwSeq(5,25);
+
+    </script>
+</head>
+<body>
+
+</body>
+</html>
